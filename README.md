@@ -1,2 +1,9 @@
-# dev_docker
-add init dev docker env
+# Development environment setup scripts
+- fish
+- tmux
+- yadm
+- docker
+- zerotier
+- neovim
+
+- checkout branch
