@@ -1,13 +1,13 @@
-#!bin/bash
+#!/bin/bash
 
-tag=0.1
+tag=0.2
 
 build() {
-  #sudo docker build -f ./Dockerfile -t easy_ede:$tag
-  echo "build"
+  sudo docker build -f ./Dockerfile -t env_ede:$tag .
 };
 
 run() {
+  sudo docker run -it -v /home:/home --name env_ede env_ede:$tag
   echo "run"
 };
 
