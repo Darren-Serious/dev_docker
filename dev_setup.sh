@@ -26,7 +26,7 @@ check() {
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     sudo apt update
-    sudo apt install docker-ce docker-ce-cli containerd.io
+    sudo apt install docker-ce docker-ce-cli containerd.io -y
 	else
 		echo "docker has install, version is `docker -v`"
 	fi
@@ -42,9 +42,15 @@ check() {
 		sudo add-apt-repository ppa:neovim-ppa/unstable
 		sudo apt-get update
 		sudo apt-get install python2-dev python-pip python3-dev python3-pip 
-		sudo apt install neovim
+		sudo apt install neovim -y
 	else
 		echo "neovim has install, version is `nvim -v | awk 'NR==1'`"
+	fi
+
+	if [ ! "$(command -v gcc)" ]; then
+		sudo apt install gcc -y
+	else
+		echo "gcc has install, version is `gcc --version | awk 'NR==1'`"
 	fi
 }
 
