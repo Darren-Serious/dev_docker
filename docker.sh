@@ -8,6 +8,9 @@ build() {
 };
 
 remove() {
+  if [[ -n $(sudo docker ps -q -f "name=^env_ede$") ]];then
+    sudo docker stop env_ede
+  fi
   sudo docker rm env_ede
   sudo docker rmi env_ede:$tag
 }
