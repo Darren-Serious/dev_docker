@@ -11,5 +11,6 @@ RUN apt-get update \
     && make install \
     && rm -r /root/cmake* \
     && apt install gcc-arm-none-eabi -y \
-    && apt install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu -y\
+    && apt install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu -y \
+    && apt install usbutils udev -y \
     
