@@ -15,6 +15,9 @@ RUN apt-get update && \
     apt-get install -y build-essential pkg-config autoconf automake libtool libusb-dev libusb-1.0-0-dev libhidapi-dev && \
     apt-get install -y libtool libsysfs-dev && \
     apt-get install -y unzip && \
+    apt-get install -y python3 && \
+    ln -s /usr/bin/python3 /usr/bin/python && \
+    apt-get install -y flex bison bc lz4 device-tree-compiler&& \
     tar -zxvf /root/cmake-3.27.7.tar.gz -C /root && \
     unzip /root/openocd-0.12.0.zip -d /root && \
     cd /root/cmake-3.27.7 && \
