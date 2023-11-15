@@ -18,8 +18,8 @@ RUN sed -i s/archive.ubuntu.com/mirrors.aliyun.com/g /etc/apt/sources.list && \
     apt-get install -y libtool libsysfs-dev && \
     apt-get install -y unzip && \
     apt-get install -y python3 && \
-    ln -s /usr/bin/python3 /usr/bin/python && \
-    apt-get install -y flex bison bc lz4 device-tree-compiler
+    apt-get install -y flex bison bc lz4 device-tree-compiler && \
+    ln -s /usr/bin/python3 /usr/bin/python 
 RUN tar -zxvf /root/cmake-3.27.7.tar.gz -C /root && \
     cd /root/cmake-3.27.7 && \
     ./configure && \
