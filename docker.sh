@@ -5,6 +5,8 @@ tag=0.2
 docker_run() {
   if [[ -n $(uname -a | grep lima) ]];then
     docker run -it --privileged -v /Users/:/Users --name env_ede env_ede:$tag
+  elif [[ -n $(uname -a | grep aarch64) ]];then
+    docker run -it --privileged -v /Users/:/Users --name env_ede env_ede:$tag
   else
     docker run -it --privileged -v /home:/home -v /dev/bus/usb:/dev/bus/usb --name env_ede env_ede:$tag
   fi
